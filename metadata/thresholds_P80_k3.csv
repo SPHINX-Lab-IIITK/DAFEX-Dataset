@@ -1,0 +1,11 @@
+feature,direction,threshold_P80
+suspicious_presence_ratio,high,0.52
+skewness,low,1.702666347240489
+burstiness,low,1.4897497072149244
+suspicious_presence,high,16.0
+norm_entropy,high,0.7372409145345219
+dominant_freq,low,0.18113474898893428
+depth,low,26.0
+sliding_entropy_std,low,0.44469988905575936
+rare_suspicious,high,2.0
+freq_gap_top2,low,0.012014200918264495

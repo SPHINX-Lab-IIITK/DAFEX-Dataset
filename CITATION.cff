@@ -1,0 +1,22 @@
+﻿cff-version: 1.2.0
+message: "If you use the DAFEX filtered Android system-call dataset, please cite the associated publication."
+title: "DAFEX Dataset"
+type: dataset
+authors:
+  - family-names: "M H"
+    given-names: "Faseela"
+  - family-names: "B C"
+    given-names: "Manjith"
+preferred-citation:
+  type: article
+  title: "DAFEX: Direction-aware behavioral filtering and statistical fingerprinting in android system call analysis"
+  authors:
+    - family-names: "M H"
+      given-names: "Faseela"
+    - family-names: "B C"
+      given-names: "Manjith"
+  journal: "Journal of Information Security and Applications"
+  volume: "99"
+  year: 2026
+  start: "104437"
+  doi: "10.1016/j.jisa.2026.104437"
