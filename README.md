@@ -99,25 +99,15 @@ The released dataset corresponds to the **P80, k=3** operating configuration rep
 
 
 | Parameter | Value |
-
-|---|---:|
-
+| --- | ---: |
 | Percentile threshold | P80 |
-
 | Voting parameter | k = 3 |
-
 | Filtering features | 10 |
-
 | Benign samples removed | 671 |
-
 | Benign removal rate | 27.13% |
-
 | Benign samples retained | 1,802 |
-
 | Benign retention rate | 72.87% |
-
 | Malicious samples retained | 3,347 |
-
 | Discriminative gap | 52.82% |
 
 
@@ -152,7 +142,7 @@ The final DAFEX P80, k=3 filtered dataset contains:
 
 | Property | Value |
 
-|---|---:|
+| --- | ---: |
 
 | Total application traces | 5,149 |
 
@@ -196,7 +186,7 @@ The distributed dataset contains one application-level system-call trace per row
 
 | Column | Description |
 
-|---|---|
+| --- | --- |
 
 | `sample_id` | Unique identifier associated with the Android application trace |
 
@@ -356,7 +346,7 @@ The verified mapping is:
 
 | Textual label | Numeric `cls` |
 
-|---|---:|
+| --- | ---: |
 
 | `benign` | 1 |
 
@@ -470,7 +460,7 @@ This verifies that the compressed distribution artifact is a lossless representa
 
 | File | SHA-256 |
 
-|---|---|
+| --- | --- |
 
 | `metadata/dataset_statistics.csv` | `c3ab9157f39d50eacf1ab464e8419e68cab9e0970866902f62ed273ad7dc592b` |
 
@@ -527,46 +517,24 @@ The following checks were completed before repository release:
 ## Repository Structure
 
 
-
-```text
-
 DAFEX-Dataset/
-
-â”œâ”€â”€ README.md
-
-â”œâ”€â”€ CITATION.bib
-
-â”œâ”€â”€ CITATION.cff
-
-â”œâ”€â”€ .gitignore
-
-â”‚
-
-â”œâ”€â”€ data/
-
-â”‚   â””â”€â”€ filtered_dataset.csv.gz
-
-â”‚
-
-â”œâ”€â”€ metadata/
-
-â”‚   â”œâ”€â”€ checksums.sha256
-
-â”‚   â”œâ”€â”€ dataset_statistics.csv
-
-â”‚   â”œâ”€â”€ filtered_samples.csv
-
-â”‚   â”œâ”€â”€ retained_samples.csv
-
-â”‚   â””â”€â”€ thresholds_P80_k3.csv
-
-â”‚
-
-â””â”€â”€ LICENSES/
-
-&#x20;   â””â”€â”€ UPSTREAM-MIT.txt
-
-```
+|-- README.md
+|-- CITATION.bib
+|-- CITATION.cff
+|-- .gitignore
+|
+|-- data/
+|   `-- filtered_dataset.csv.gz
+|
+|-- metadata/
+|   |-- checksums.sha256
+|   |-- dataset_statistics.csv
+|   |-- filtered_samples.csv
+|   |-- retained_samples.csv
+|   `-- thresholds_P80_k3.csv
+|
+`-- LICENSES/
+    `-- UPSTREAM-MIT.txt
 
 
 
