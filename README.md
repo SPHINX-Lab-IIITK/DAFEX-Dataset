@@ -1,4 +1,4 @@
-﻿# DAFEX Dataset
+# DAFEX Dataset
 
 
 
@@ -141,21 +141,13 @@ The final DAFEX P80, k=3 filtered dataset contains:
 
 
 | Property | Value |
-
 | --- | ---: |
-
 | Total application traces | 5,149 |
-
 | Benign traces | 1,802 |
-
 | Malicious traces | 3,347 |
-
 | Total system-call events | 80,482,519 |
-
 | Unique syscall names | 101 |
-
 | Missing values | 0 |
-
 | Duplicate sample identifiers | 0 |
 
 
@@ -185,15 +177,10 @@ The distributed dataset contains one application-level system-call trace per row
 
 
 | Column | Description |
-
 | --- | --- |
-
 | `sample_id` | Unique identifier associated with the Android application trace |
-
 | `label` | Textual class label: `benign` or `malicious` |
-
 | `syscall_count` | Number of system-call events contained in the trace |
-
 | `syscall_sequence` | Ordered, space-separated sequence of system-call names |
 
 
@@ -345,11 +332,8 @@ The verified mapping is:
 
 
 | Textual label | Numeric `cls` |
-
 | --- | ---: |
-
 | `benign` | 1 |
-
 | `malicious` | 0 |
 
 
@@ -405,8 +389,7 @@ SHA-256:
 ```text
 
 7b79cfef68a44dcc0687c0e7c421983fac63f45663e8cf6d121536c3a4559bb8
-
-
+```
 
 ---
 
@@ -459,15 +442,10 @@ This verifies that the compressed distribution artifact is a lossless representa
 
 
 | File | SHA-256 |
-
 | --- | --- |
-
 | `metadata/dataset_statistics.csv` | `c3ab9157f39d50eacf1ab464e8419e68cab9e0970866902f62ed273ad7dc592b` |
-
 | `metadata/retained_samples.csv` | `6deec0fddfff7d181c6de7ea9fe98a519edabb1362ddec8fc2e7874116053d9f` |
-
 | `metadata/filtered_samples.csv` | `8563c1235346b4cebf9853aef248fb727bcbd6ade812e50842efde63e849c256` |
-
 | `metadata/thresholds_P80_k3.csv` | `f775d3dc1fa832f7c0883af6862cf31df7cd06cd8da944e4ad23dcae4ba1ab08` |
 
 
@@ -570,26 +548,25 @@ The compressed dataset can be read directly without manually extracting it.
 
 
 
-```python
-
-import pandas as pd
-
-
-
-df = pd.read_csv(
-
-&#x20;   "data/filtered_dataset.csv.gz",
-
-&#x20;   compression="gzip"
-
-)
-
-
-
-print(df.shape)
-
-print(df\["label"].value_counts())
-
+```text
+DAFEX-Dataset/
+|-- README.md
+|-- CITATION.bib
+|-- CITATION.cff
+|-- .gitignore
+|
+|-- data/
+|   `-- filtered_dataset.csv.gz
+|
+|-- metadata/
+|   |-- checksums.sha256
+|   |-- dataset_statistics.csv
+|   |-- filtered_samples.csv
+|   |-- retained_samples.csv
+|   `-- thresholds_P80_k3.csv
+|
+`-- LICENSES/
+    `-- UPSTREAM-MIT.txt
 ```
 
 
@@ -856,7 +833,3 @@ This version corresponds to the initial public research release of the DAFEX **P
 Release contents and integrity information are documented in this repository and in:
 
 `metadata/checksums.sha256`
-
-
-
-
