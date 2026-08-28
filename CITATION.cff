@@ -1,4 +1,4 @@
-﻿cff-version: 1.2.0
+cff-version: 1.2.0
 message: "If you use the DAFEX filtered Android system-call dataset, please cite the associated publication."
 title: "DAFEX Dataset"
 type: dataset
