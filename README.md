@@ -489,64 +489,7 @@ The following checks were completed before repository release:
 - compressed dataset total system-call count matches the canonical CSV
 
 
-
-
-
 ## Repository Structure
-
-
-DAFEX-Dataset/
-|-- README.md
-|-- CITATION.bib
-|-- CITATION.cff
-|-- .gitignore
-|
-|-- data/
-|   `-- filtered_dataset.csv.gz
-|
-|-- metadata/
-|   |-- checksums.sha256
-|   |-- dataset_statistics.csv
-|   |-- filtered_samples.csv
-|   |-- retained_samples.csv
-|   `-- thresholds_P80_k3.csv
-|
-`-- LICENSES/
-    `-- UPSTREAM-MIT.txt
-
-
-
-The primary distributed dataset is:
-
-
-
-`data/filtered_dataset.csv.gz`
-
-
-
-The uncompressed canonical file, `data/filtered_dataset.csv`, is approximately **610 MiB** and is intentionally excluded from Git through `.gitignore`.
-
-
-
-The compressed release artifact is **19,066,909 bytes (18.18 MiB)**.
-
-
-
----
-
-
-
-## Loading the Dataset
-
-
-
-The compressed dataset can be read directly without manually extracting it.
-
-
-
-### Python / pandas
-
-
 
 ```text
 DAFEX-Dataset/
@@ -570,10 +513,40 @@ DAFEX-Dataset/
 ```
 
 
+The primary distributed dataset is:
+
+
+`data/filtered_dataset.csv.gz`
+
+
+The uncompressed canonical file, `data/filtered_dataset.csv`, is approximately **610 MiB** and is intentionally excluded from Git through `.gitignore`.
+
+
+The compressed release artifact is **19,066,909 bytes (18.18 MiB)**.
+
+
+---
+
+
+## Loading the Dataset
+
+
+The compressed dataset can be read directly without manually extracting it.
+
+
+### Python / pandas
+
+```python
+import pandas as pd
+
+df = pd.read_csv("data/filtered_dataset.csv.gz", compression="gzip")
+
+print(df.shape)
+print(df["label"].value_counts())
+print(df.columns.tolist())
+```
 
 Expected dataset shape:
-
-
 
 ```text
 
@@ -582,9 +555,7 @@ Expected dataset shape:
 ```
 
 
-
 Expected class distribution:
-
 
 
 ```text
@@ -594,7 +565,6 @@ malicious    3347
 benign       1802
 
 ```
-
 
 
 The available columns are:
@@ -692,95 +662,70 @@ The DAFEX filtered dataset is intended primarily for academic and research use i
 - mobile and IoT security research
 
 
-
 The release preserves application-level trace boundaries and may therefore support downstream experiments involving statistical, machine-learning, deep-learning, and sequential behavioral models.
-
 
 
 Researchers should clearly report that experiments use the **DAFEX-derived P80, k=3 filtered dataset**, rather than referring to it as the original upstream dataset.
 
 
-
 ---
-
 
 
 ## Scope and Limitations
 
 
-
 This release is a **derived research dataset** generated from the publicly available Android system-call corpus used in the associated DAFEX study. It is not a newly collected raw Android application corpus.
-
 
 
 DAFEX performs statistical sanitization of benign-labeled traces according to malware-aligned behavioral characteristics. Removal by DAFEX therefore does **not** establish that a filtered benign application is malicious, mislabeled, or compromised. It indicates that the trace satisfies the specified direction-aware behavioral filtering criterion under the selected configuration.
 
 
-
 The released dataset consequently inherits relevant characteristics and limitations of the upstream corpus, including its application population, original class labels, execution conditions, system-call coverage, and data-collection environment.
-
 
 
 The **P80, k=3** release represents the operating configuration selected in the associated study. Results obtained with this release should not automatically be generalized to other percentile thresholds, voting parameters, datasets, Android environments, malware populations, or system-call collection procedures.
 
 
-
 Researchers conducting predictive modeling should establish appropriate train/validation/test partitions for their experimental objective and apply leakage controls before model training and evaluation. The release itself should not be interpreted as prescribing a particular downstream split or classifier.
-
-
-
 
 
 ---
 
 
-
 ## Upstream Attribution and Licensing
-
 
 
 The DAFEX filtered dataset is derived from the publicly available Android system-call dataset used in the associated DAFEX study.
 
 
-
 The upstream source is:
-
 
 
 **Akhilesh64, Android-Malware-Detection: Detection of Android malware based on system calls using support vector machines. GitHub repository.**
 
 
-
 Upstream repository:
-
 
 
 `https://github.com/Akhilesh64/Android-Malware-Detection`
 
 
-
 The upstream repository includes an **MIT License** attributed to:
-
 
 
 **Copyright (c) 2020 Akhilesh Sharma**
 
 
-
 A copy of that upstream license notice is preserved in this repository at:
-
 
 
 `LICENSES/UPSTREAM-MIT.txt`
 
 
-
 The upstream license is retained for attribution and provenance purposes.
 
 
-
 This DAFEX release is a **derived research artifact** produced by applying the DAFEX filtering methodology to the upstream system-call dataset. Preservation of the upstream MIT notice should not be interpreted as an independent assertion regarding ownership or licensing of any third-party applications, APKs, or other external artifacts that may have contributed to the upstream corpus.
-
 
 
 Users are responsible for complying with applicable upstream terms and any third-party rights associated with their intended use of the dataset.
@@ -805,6 +750,7 @@ If you use the DAFEX filtered dataset or the DAFEX filtering methodology in acad
   keywords = {Android security, System calls, Dataset sanitization, Percentile thresholding, Behavioral modeling, Direction-aware filtering}
 }
 ```
+
 
 Machine-readable citation metadata are also provided in:
 
