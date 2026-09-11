@@ -1,22 +1,28 @@
 cff-version: 1.2.0
-message: "If you use the DAFEX filtered Android system-call dataset, please cite the associated publication."
-title: "DAFEX Dataset"
+message: "If you use the DAFEX P80-k3 filtered Android system-call dataset, please cite this dataset and the associated publication as appropriate."
+
+title: "DAFEX P80-k3: A Statistically Filtered Android System-Call Dataset for Behavioral Malware Analysis"
 type: dataset
+version: "1.0.0"
+date-released: 2026-09-10
+
 authors:
-  - family-names: "M H"
-    given-names: "Faseela"
-  - family-names: "B C"
-    given-names: "Manjith"
+  - family-names: "Faseela"
+    given-names: "M. H."
+  - family-names: "Manjith"
+    given-names: "B. C."
+
+doi: "10.5281/zenodo.22689273"
+url: "https://doi.org/10.5281/zenodo.22689273"
+
 preferred-citation:
-  type: article
-  title: "DAFEX: Direction-aware behavioral filtering and statistical fingerprinting in android system call analysis"
+  type: dataset
+  title: "DAFEX P80-k3: A Statistically Filtered Android System-Call Dataset for Behavioral Malware Analysis"
   authors:
-    - family-names: "M H"
-      given-names: "Faseela"
-    - family-names: "B C"
-      given-names: "Manjith"
-  journal: "Journal of Information Security and Applications"
-  volume: "99"
+    - family-names: "Faseela"
+      given-names: "M. H."
+    - family-names: "Manjith"
+      given-names: "B. C."
   year: 2026
-  start: "104437"
-  doi: "10.1016/j.jisa.2026.104437"
+  version: "1.0.0"
+  doi: "10.5281/zenodo.22689273"
